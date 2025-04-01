@@ -1,0 +1,556 @@
+---
+import App from "../layouts/App.astro";
+import "src/styles/global.css";
+import { Image } from "astro:assets";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/Navbar.astro";
+
+const team = [
+  {
+    name: "Firas Faisal",
+    role: "Software Engineer",
+    profileImg: "https://avatars.githubusercontent.com/u/144866382?v=4",
+    portfolio: "https://firas-faisal.github.io/",
+    github: "https://github.com/Firas-Faisal",
+    skills: ["C", "Java", "HTML", "CSS", "PHP", "Flutter", "MySQL", "Firebase"],
+    projects: [
+      "Library Management System",
+      "QR Scanner & Generator",
+      "SwiftPark",
+    ],
+  },
+  {
+    name: "RipinDensumite",
+    role: "Software Engineer",
+    profileImg: "https://avatars.githubusercontent.com/u/52118329?v=4",
+    portfolio: "https://ripindensumite.github.io/",
+    github: "https://github.com/RipinDensumite",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "Java",
+      "SQL",
+      "C",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Vite",
+      "Tailwind CSS",
+      "Docker",
+      "Git",
+      "Caddy",
+      "PocketBase",
+      "XAMPP",
+    ],
+    projects: [
+      "Marketing And Management System (MAMS)",
+      "PharmaGains",
+      "KUDO QUIZ",
+    ],
+  },
+  {
+    name: "Zal Hazmi",
+    role: "Software Engineer",
+    profileImg: "https://avatars.githubusercontent.com/u/104803805?v=4",
+    portfolio: null,
+    github: "https://github.com/ZeroHazmi",
+    skills: [
+      "Java",
+      "C",
+      "PHP",
+      "HTML/CSS",
+      "C#",
+      "Kotlin",
+      "MySQL",
+      "PostgreSQL",
+      ".NET Web Core API",
+    ],
+    projects: ["Police-Report Assistance System", "GMI Prospect Mobile App"],
+  },
+];
+
+// Services
+const services = [
+  {
+    icon: "📱",
+    title: "App Development",
+    description:
+      "Creating intuitive, high-performance mobile applications for iOS and Android.",
+  },
+  {
+    icon: "🌐",
+    title: "Web Development",
+    description: "Building responsive, secure, and scalable web solutions.",
+  },
+  {
+    icon: "🚀",
+    title: "Custom Solutions",
+    description: "Tailored digital products to meet unique business needs.",
+  },
+];
+
+// Tech stack categories
+const techStack = [
+  {
+    category: "Languages",
+    techs: [
+      "C",
+      "Java",
+      "HTML",
+      "CSS",
+      "PHP",
+      "JavaScript",
+      "SQL",
+      "C#",
+      "Kotlin",
+    ],
+  },
+  {
+    category: "Frontend Frameworks",
+    techs: ["React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    category: "Backend & APIs",
+    techs: ["Node.js", ".NET Web Core API", "PocketBase"],
+  },
+  {
+    category: "Mobile Development",
+    techs: ["Flutter", "Jetpack Compose"],
+  },
+  {
+    category: "Database",
+    techs: ["MySQL", "PostgreSQL", "Firebase"],
+  },
+  {
+    category: "Developer Tools",
+    techs: ["Docker", "Git", "XAMPP", "Caddy"],
+  },
+];
+
+// Contact info
+const contacts = [
+  {
+    type: "email",
+    value: "bolehbro@outlook.com",
+    icon: "📧",
+  },
+  {
+    type: "whatsapp",
+    value: "+60 11-5729 0126",
+    link: "https://wa.me/601157290126?text=Hello%20BolehBro!%20I'm%20interested%20in%20your%20services.",
+    icon: "📞",
+  },
+];
+---
+
+<App title="BolehBro - App & Web Development Team">
+<Navbar />
+
+  <section
+    id="hero"
+    class="relative min-h-screen overflow-hidden bg-[url('/assets/grid-pattern.svg')] bg-slate-950 flex flex-col justify-center items-center text-white"
+  >
+    <!-- Gradient background overlay -->
+    <!-- <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/90 via-blue-900/80 to-purple-900/90"></div> -->
+	<div class="absolute inset-0 bg-black opacity-15 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div> 
+	
+	<div class="absolute top-0 left-0 w-full h-full">
+		<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-[60rem] rounded-full border border-amber-400/10 animate-[spin_40s_linear_infinite]"></div>
+		<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-[40rem] rounded-full border border-blue-400/10 animate-[spin_30s_linear_infinite_reverse]"></div>
+	  </div>
+
+    <div class="container mx-auto px-4 py-20 z-10 text-center">
+      <div class="flex items-center justify-center mb-6">
+        <div class="h-0.5 w-12 bg-gradient-to-r from-transparent to-amber-400/80"></div>
+        <h1 class="text-5xl md:text-7xl font-bold mx-4 animate-fade-in">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-amber-500">BolehBro</span>
+        </h1>
+        <div class="h-0.5 w-12 bg-gradient-to-l from-transparent to-amber-400/80"></div>
+      </div>
+
+      <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-blue-100/90 animate-fade-in-delay">
+        A passionate team of developers specializing in app development and web development.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6 animate-fade-in-delay-2">
+        <a
+          href="#team"
+          class="px-8 py-3 bg-transparent border border-amber-400/80 rounded-sm relative overflow-hidden group hover:text-black transition-colors duration-500"
+        >
+          <span class="absolute inset-0 w-0 bg-amber-400 transition-all duration-500 ease-out group-hover:w-full"></span>
+          <span class="relative z-10">Our Team</span>
+        </a>
+        <a
+          href="#contact"
+          class="px-8 py-3 bg-transparent border border-blue-400/80 rounded-sm relative overflow-hidden group hover:text-black transition-colors duration-500"
+        >
+          <span class="absolute inset-0 w-0 bg-blue-400 transition-all duration-500 ease-out group-hover:w-full"></span>
+          <span class="relative z-10">Contact Us</span>
+        </a>
+      </div>
+
+	  <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+        <div class="h-10 w-0.5 bg-gradient-to-b from-transparent to-amber-400/80 animate-pulse"></div>
+        <div class="mt-2 text-amber-400/80 text-xs font-light tracking-widest">SCROLL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-20 bg-slate-50" id="mission">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="flex items-center justify-center mb-6">
+          <div class="h-0.5 w-8 bg-gradient-to-r from-transparent to-amber-500/80"></div>
+          <h2 class="text-3xl md:text-4xl font-bold mx-4 text-slate-800 relative">
+            Our Mission
+            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400/0 via-amber-400/80 to-amber-400/0"></span>
+          </h2>
+          <div class="h-0.5 w-8 bg-gradient-to-l from-transparent to-amber-500/80"></div>
+        </div>
+        
+        <p class="text-lg text-slate-600 leading-relaxed">
+          We build innovative, scalable, and high-quality digital solutions that
+          empower businesses and users alike. Our focus is on creating
+          exceptional user experiences with cutting-edge technology and a
+          user-first approach.
+        </p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          services.map((service, index) => (
+            <div class="relative bg-white p-8 rounded-sm shadow-sm border border-slate-100 group hover:shadow-md hover:border-amber-400/30 transition-all duration-300 overflow-hidden">
+              <!-- Genshin-style card decorative element -->
+              <div class="absolute -right-2 -top-2 w-12 h-12 border-t-2 border-r-2 border-amber-400/20 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div class="absolute -left-2 -bottom-2 w-12 h-12 border-b-2 border-l-2 border-amber-400/20 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              
+              <div class="text-4xl mb-4">{service.icon}</div>
+              <h3 class="text-xl font-semibold mb-3 text-slate-800 group-hover:text-amber-600 transition-colors duration-300">
+                {service.title}
+              </h3>
+              <p class="text-slate-600">{service.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-20 bg-slate-800 text-white" id="team">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-center mb-12">
+        <div class="h-0.5 w-8 bg-gradient-to-r from-transparent to-amber-400/80"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mx-4 relative">
+          Meet the Team
+          <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400/0 via-amber-400/80 to-amber-400/0"></span>
+        </h2>
+        <div class="h-0.5 w-8 bg-gradient-to-l from-transparent to-amber-400/80"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {
+          team.map((member, index) => (
+            <div class="bg-slate-900/80 rounded-sm overflow-hidden group relative border border-slate-700 hover:border-amber-400/50 transition-all duration-300">
+              <div class="absolute top-0 right-0 w-16 h-16 border-t border-r border-amber-400/0 group-hover:border-amber-400/30 transition-all duration-500 z-10"></div>
+              <div class="absolute bottom-0 left-0 w-16 h-16 border-b border-l border-amber-400/0 group-hover:border-amber-400/30 transition-all duration-500 z-10"></div>
+              
+              <div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-lg shadow-amber-400/30 z-20"></div>
+              
+              <div class="h-40 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden relative">
+                <div class="absolute inset-0 bg-[url('/assets/grid-pattern.svg')] opacity-10"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                
+                <img
+                  src={member.profileImg}
+                  alt={member.name}
+                  class="w-24 h-24 rounded-full object-cover z-10 group-hover:scale-110 transition-all duration-500"
+                />
+              </div>
+
+              <div class="p-6 relative">
+                <h3 class="text-xl font-semibold text-white group-hover:text-amber-400 transition-colors duration-300">
+                  {member.name}
+                </h3>
+                <p class="text-blue-400 mb-4">{member.role}</p>
+
+                <div class="mb-4">
+                  <h4 class="text-sm font-semibold text-slate-300 mb-2">
+                    Skills
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    {member.skills.slice(0, 5).map((skill) => (
+                      <span class="px-2 py-1 bg-slate-800 text-slate-300 text-xs border border-slate-700 hover:border-amber-400/50 hover:text-amber-300 transition-colors duration-300">
+                        {skill}
+                      </span>
+                    ))}
+                    {member.skills.length > 5 && (
+                      <span class="px-2 py-1 bg-slate-800 text-slate-300 text-xs border border-slate-700">
+                        +{member.skills.length - 5} more
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div class="mb-6">
+                  <h4 class="text-sm font-semibold text-slate-300 mb-2">
+                    Notable Projects
+                  </h4>
+                  <ul class="space-y-1 text-sm text-slate-400">
+                    {member.projects.map((project) => (
+                      <li class="flex items-start">
+                        <span class="text-amber-400 mr-2">•</span>
+                        {project}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="flex gap-3">
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="px-3 py-2 bg-slate-800 border border-slate-700 hover:border-amber-400/50 transition-colors text-sm flex items-center gap-2 group-hover:text-amber-300"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                      </svg>
+                      GitHub
+                    </a>
+                  )}
+
+                  {member.portfolio && (
+                    <a
+                      href={member.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="px-3 py-2 bg-slate-800 border border-slate-700 hover:border-amber-400/50 text-slate-300 transition-colors text-sm flex items-center gap-2 group-hover:text-amber-300"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
+                        />
+                      </svg>
+                      Portfolio
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden" id="tech-stack">
+    <div class="absolute inset-0 bg-[url('/assets/grid-pattern.svg')] opacity-5"></div>
+    <div class="absolute top-0 right-0 w-full h-full overflow-hidden">
+      <div class="absolute top-1/4 right-1/4 w-64 h-64 rounded-full border border-amber-400/5 animate-[spin_30s_linear_infinite]"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full border border-blue-400/5 animate-[spin_40s_linear_infinite_reverse]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex items-center justify-center mb-12">
+        <div class="h-0.5 w-8 bg-gradient-to-r from-transparent to-amber-400/80"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mx-4 relative">
+          Our Tech Stack Combined
+          <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400/0 via-amber-400/80 to-amber-400/0"></span>
+        </h2>
+        <div class="h-0.5 w-8 bg-gradient-to-l from-transparent to-amber-400/80"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          techStack.map((category) => (
+            <div class="bg-slate-800/30 backdrop-blur-sm p-6 border border-slate-700/50 relative group hover:border-amber-400/30 transition-all duration-500">
+              <!-- Genshin-style decorative corner -->
+              <div class="absolute top-0 right-0 w-8 h-8 border-t border-r border-amber-400/0 group-hover:border-amber-400/30 transition-all duration-500"></div>
+              <div class="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-amber-400/0 group-hover:border-amber-400/30 transition-all duration-500"></div>
+              
+              <h3 class="text-xl font-semibold mb-4 text-amber-400">
+                {category.category}
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {category.techs.map((tech) => (
+                  <span class="px-3 py-1 bg-slate-800/80 text-slate-300 border border-slate-700/80 text-sm hover:text-amber-300 hover:border-amber-400/30 transition-all duration-300 cursor-default">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="py-20 bg-slate-950 text-white relative overflow-hidden">
+	<div class="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-amber-400/10 animate-[spin_40s_linear_infinite]"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-blue-400/10 animate-[spin_30s_linear_infinite_reverse]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 max-w-4xl relative z-10">
+      <div class="text-center mb-12">
+        <div class="flex items-center justify-center mb-6">
+          <div class="h-0.5 w-8 bg-gradient-to-r from-transparent to-amber-400/80"></div>
+          <h2 class="text-3xl md:text-4xl font-bold mx-4 relative">
+            Our Vision
+            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400/0 via-amber-400/80 to-amber-400/0"></span>
+          </h2>
+          <div class="h-0.5 w-8 bg-gradient-to-l from-transparent to-amber-400/80"></div>
+        </div>
+        
+        <p class="text-xl text-slate-300">
+          We believe in delivering top-tier software solutions with a focus on
+          <span class="font-bold text-amber-400">user experience</span>,
+          <span class="font-bold text-amber-400">performance</span>, and
+          <span class="font-bold text-amber-400">scalability</span>. We strive to
+          bring ideas to life with cutting-edge technology and a user-first
+          approach.
+        </p>
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <a
+          href="#contact"
+          class="px-8 py-3 bg-transparent border border-amber-400/80 relative overflow-hidden group"
+        >
+          <span class="absolute inset-0 w-0 bg-amber-400 transition-all duration-500 ease-out group-hover:w-full"></span>
+          <span class="relative z-10 group-hover:text-black transition-colors duration-500 tracking-wider font-medium">Start a Project With Us</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 bg-slate-50" id="contact">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-center mb-12">
+        <div class="h-0.5 w-8 bg-gradient-to-r from-transparent to-amber-500/80"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mx-4 text-slate-800 relative">
+          Contact Us
+		  <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-500/0 via-amber-500/80 to-amber-500/0"></span>
+        </h2>
+        <div class="h-0.5 w-8 bg-gradient-to-l from-transparent to-amber-500/80"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-sm shadow-sm border border-slate-100 p-8 relative overflow-hidden group hover:border-amber-400/30 transition-all duration-300">
+          <div class="absolute -right-2 -top-2 w-12 h-12 border-t-2 border-r-2 border-amber-400/20 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+          <div class="absolute -left-2 -bottom-2 w-12 h-12 border-b-2 border-l-2 border-amber-400/20 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+          
+          <div class="text-center mb-8">
+            <p class="text-lg text-slate-600">
+              Ready to start your project? Get in touch with us today and let's bring your ideas to life!
+            </p>
+          </div>
+
+          <!-- Contact Methods -->
+          <div>
+            <!-- Contact Info -->
+            <div>
+              <h3 class="text-xl font-semibold mb-4 text-slate-800 relative inline-block">
+                Contact Information
+                <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400/80 to-amber-400/0"></span>
+              </h3>
+              
+              <div class="space-y-4 mt-6">
+                {contacts.map((contact) => (
+                  <div class="flex items-center">
+                    <div class="text-2xl text-amber-500 mr-4">{contact.icon}</div>
+                    <div>
+                      <div class="text-sm text-slate-500 mb-1 capitalize">{contact.type}</div>
+                      {contact.link ? (
+                        <a href={contact.link} class="text-slate-800 hover:text-amber-500 transition-colors">
+                          {contact.value}
+                        </a>
+                      ) : (
+                        <div class="text-slate-800">{contact.value}</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <!-- <div>
+              <h3 class="text-xl font-semibold mb-4 text-slate-800 relative inline-block">
+                Send a Message
+                <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400/80 to-amber-400/0"></span>
+              </h3>
+              
+              <form class="mt-6 space-y-4">
+                <div>
+                  <label for="name" class="text-sm text-slate-500 mb-1 block">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-2 border border-slate-200 rounded-sm focus:border-amber-400 focus:outline-none transition-colors"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                
+                <div>
+                  <label for="email" class="text-sm text-slate-500 mb-1 block">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-2 border border-slate-200 rounded-sm focus:border-amber-400 focus:outline-none transition-colors"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                
+                <div>
+                  <label for="message" class="text-sm text-slate-500 mb-1 block">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-slate-200 rounded-sm focus:border-amber-400 focus:outline-none transition-colors"
+                    placeholder="Tell us about your project"
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  class="px-6 py-3 bg-transparent border border-amber-400 relative overflow-hidden group text-slate-800 hover:text-black w-full"
+                >
+                  <span class="absolute inset-0 w-0 bg-amber-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+                  <span class="relative z-10 font-medium">Send Message</span>
+                </button>
+              </form>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <Footer />
+</App>
