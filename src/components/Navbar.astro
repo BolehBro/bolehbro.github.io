@@ -8,7 +8,10 @@ const navItems = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 w-full z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200/20">
+<nav
+  x-data="{ open: false }"
+  class="fixed top-0 left-0 w-full z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200/20"
+>
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
     <div class="text-white font-bold text-2xl">
       <span
@@ -32,7 +35,11 @@ const navItems = [
     </div>
 
     <!-- Mobile menu button -->
-    <button class="md:hidden text-white" id="mobile-menu-button">
+    <button
+      @click="open = !open"
+      class="md:hidden text-white cursor-pointer"
+      id="mobile-menu-button"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -50,12 +57,19 @@ const navItems = [
   </div>
 
   <!-- Mobile navigation menu (hidden by default) -->
-  <div class="hidden md:hidden bg-black/80 backdrop-blur-md" id="mobile-menu">
+  <div
+    x-show="open"
+    x-cloak
+    @click.outside="open = false"
+    class="bg-black/80 backdrop-blur-md"
+    id="mobile-menu"
+  >
     <div class="px-2 pt-2 pb-3 space-y-1">
       {
         navItems.map((item) => (
           <a
             href={`#${item.id}`}
+            x-on:click="open = false"
             class="block px-3 py-2 text-white font-medium border-l-2 border-transparent hover:border-amber-400 transition-all duration-300"
           >
             {item.name}
